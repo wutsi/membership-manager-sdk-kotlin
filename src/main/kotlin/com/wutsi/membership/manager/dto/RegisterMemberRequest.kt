@@ -5,5 +5,6 @@ import kotlin.String
 public data class RegisterMemberRequest(
   public val phoneNumber: String = "",
   public val displayName: String = "",
+  public val country: String = "",
   public val pin: String = "",
 )
