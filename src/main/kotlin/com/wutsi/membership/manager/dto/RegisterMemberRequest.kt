@@ -8,5 +8,5 @@ public data class RegisterMemberRequest(
   public val displayName: String = "",
   public val country: String = "",
   public val pin: String = "",
-  public val cityId: Long = 0,
+  public val cityId: Long? = null,
 )
