@@ -2,6 +2,8 @@ package com.wutsi.membership.manager
 
 import com.wutsi.membership.manager.dto.EnableBusinessRequest
 import com.wutsi.membership.manager.dto.RegisterMemberRequest
+import com.wutsi.membership.manager.dto.SearchMemberRequest
+import com.wutsi.membership.manager.dto.SearchMemberResponse
 import com.wutsi.membership.manager.dto.UpdateMemberAttributeRequest
 import feign.Headers
 import feign.Param
@@ -10,9 +12,9 @@ import kotlin.String
 import kotlin.Unit
 
 public interface MembershipManagerApi {
-  @RequestLine("GET /v1/members/start-registration?phone-number={phone-number}")
+  @RequestLine("POST /v1/members/search")
   @Headers(value=["Content-Type: application/json"])
-  public fun startMemberRegistration(@Param("phone-number") phoneNumber: String): Unit
+  public fun searchMember(request: SearchMemberRequest): SearchMemberResponse
 
   @RequestLine("POST /v1/members")
   @Headers(value=["Content-Type: application/json"])
