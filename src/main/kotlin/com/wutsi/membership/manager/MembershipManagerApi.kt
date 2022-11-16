@@ -1,6 +1,7 @@
 package com.wutsi.membership.manager
 
 import com.wutsi.membership.manager.dto.EnableBusinessRequest
+import com.wutsi.membership.manager.dto.GetMemberResponse
 import com.wutsi.membership.manager.dto.RegisterMemberRequest
 import com.wutsi.membership.manager.dto.SearchMemberRequest
 import com.wutsi.membership.manager.dto.SearchMemberResponse
@@ -15,6 +16,10 @@ public interface MembershipManagerApi {
   @RequestLine("POST /v1/members/search")
   @Headers(value=["Content-Type: application/json"])
   public fun searchMember(request: SearchMemberRequest): SearchMemberResponse
+
+  @RequestLine("GET /v1/members")
+  @Headers(value=["Content-Type: application/json"])
+  public fun getMember(): GetMemberResponse
 
   @RequestLine("POST /v1/members")
   @Headers(value=["Content-Type: application/json"])
