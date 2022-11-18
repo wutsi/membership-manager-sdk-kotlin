@@ -5,6 +5,8 @@ import com.wutsi.membership.manager.dto.GetMemberResponse
 import com.wutsi.membership.manager.dto.RegisterMemberRequest
 import com.wutsi.membership.manager.dto.SearchMemberRequest
 import com.wutsi.membership.manager.dto.SearchMemberResponse
+import com.wutsi.membership.manager.dto.SearchPlaceRequest
+import com.wutsi.membership.manager.dto.SearchPlaceResponse
 import com.wutsi.membership.manager.dto.UpdateMemberAttributeRequest
 import feign.Headers
 import feign.Param
@@ -48,4 +50,8 @@ public interface MembershipManagerApi {
   @RequestLine("GET /v1/places/import?country={country}")
   @Headers(value=["Content-Type: application/json"])
   public fun importPlace(@Param("country") country: String): Unit
+
+  @RequestLine("POST /v1/places/search")
+  @Headers(value=["Content-Type: application/json"])
+  public fun searchPlace(request: SearchPlaceRequest): SearchPlaceResponse
 }
