@@ -3,6 +3,8 @@ package com.wutsi.membership.manager
 import com.wutsi.membership.manager.dto.EnableBusinessRequest
 import com.wutsi.membership.manager.dto.GetMemberResponse
 import com.wutsi.membership.manager.dto.RegisterMemberRequest
+import com.wutsi.membership.manager.dto.SearchCategoryRequest
+import com.wutsi.membership.manager.dto.SearchCategoryResponse
 import com.wutsi.membership.manager.dto.SearchMemberRequest
 import com.wutsi.membership.manager.dto.SearchMemberResponse
 import com.wutsi.membership.manager.dto.SearchPlaceRequest
@@ -46,6 +48,10 @@ public interface MembershipManagerApi {
   @RequestLine("GET /v1/categories/import?language={language}")
   @Headers(value=["Content-Type: application/json"])
   public fun importCategory(@Param("language") language: String): Unit
+
+  @RequestLine("POST /v1/categories/search")
+  @Headers(value=["Content-Type: application/json"])
+  public fun searchCategory(request: SearchCategoryRequest): SearchCategoryResponse
 
   @RequestLine("GET /v1/places/import?country={country}")
   @Headers(value=["Content-Type: application/json"])
