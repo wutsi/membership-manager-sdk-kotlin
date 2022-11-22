@@ -13,6 +13,7 @@ import com.wutsi.membership.manager.dto.UpdateMemberAttributeRequest
 import feign.Headers
 import feign.Param
 import feign.RequestLine
+import kotlin.Long
 import kotlin.String
 import kotlin.Unit
 
@@ -21,9 +22,9 @@ public interface MembershipManagerApi {
   @Headers(value=["Content-Type: application/json"])
   public fun searchMember(request: SearchMemberRequest): SearchMemberResponse
 
-  @RequestLine("GET /v1/members")
+  @RequestLine("GET /v1/members?id={id}")
   @Headers(value=["Content-Type: application/json"])
-  public fun getMember(): GetMemberResponse
+  public fun getMember(@Param("id") id: Long? = null): GetMemberResponse
 
   @RequestLine("POST /v1/members")
   @Headers(value=["Content-Type: application/json"])
