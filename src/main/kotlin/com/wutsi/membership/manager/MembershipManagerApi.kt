@@ -22,9 +22,9 @@ public interface MembershipManagerApi {
   @Headers(value=["Content-Type: application/json"])
   public fun searchMember(request: SearchMemberRequest): SearchMemberResponse
 
-  @RequestLine("GET /v1/members?id={id}")
+  @RequestLine("GET /v1/members/{id}")
   @Headers(value=["Content-Type: application/json"])
-  public fun getMember(@Param("id") id: Long? = null): GetMemberResponse
+  public fun getMember(@Param("id") id: Long): GetMemberResponse
 
   @RequestLine("POST /v1/members")
   @Headers(value=["Content-Type: application/json"])
