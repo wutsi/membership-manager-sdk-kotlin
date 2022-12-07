@@ -1,6 +1,6 @@
 package com.wutsi.membership.manager
 
-import com.wutsi.membership.manager.dto.EnableBusinessRequest
+import com.wutsi.membership.manager.dto.ActivateBusinessRequest
 import com.wutsi.membership.manager.dto.GetMemberResponse
 import com.wutsi.membership.manager.dto.RegisterMemberRequest
 import com.wutsi.membership.manager.dto.SearchCategoryRequest
@@ -32,7 +32,7 @@ public interface MembershipManagerApi {
 
   @RequestLine("DELETE /v1/members")
   @Headers(value=["Content-Type: application/json"])
-  public fun deleteMember(): Unit
+  public fun deactivateMember(): Unit
 
   @RequestLine("POST /v1/members/attributes")
   @Headers(value=["Content-Type: application/json"])
@@ -40,11 +40,11 @@ public interface MembershipManagerApi {
 
   @RequestLine("POST /v1/members/business")
   @Headers(value=["Content-Type: application/json"])
-  public fun enableBusiness(request: EnableBusinessRequest): Unit
+  public fun activateBusiness(request: ActivateBusinessRequest): Unit
 
   @RequestLine("DELETE /v1/members/business")
   @Headers(value=["Content-Type: application/json"])
-  public fun disableBusiness(): Unit
+  public fun deactivateBusiness(): Unit
 
   @RequestLine("GET /v1/categories/import?language={language}")
   @Headers(value=["Content-Type: application/json"])
