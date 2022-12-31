@@ -6,7 +6,7 @@
 
   <artifactId>membership-manager-sdk-kotlin</artifactId>
   <groupId>com.wutsi.membership.manager</groupId>
-  <version>1.0.26-SNAPSHOT</version>
+  <version>1.0.26</version>
   <packaging>jar</packaging>
 
   <name>membership-manager-sdk-kotlin</name>
@@ -54,7 +54,7 @@
 
   <scm>
     <developerConnection>scm:git:https://github.com/wutsi/membership-manager-sdk-kotlin.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>membership-manager-sdk-kotlin-1.0.26</tag>
   </scm>
   <distributionManagement>
     <repository>
